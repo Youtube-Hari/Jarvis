@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jarvis</title>
+    <div class = "glowbar" id="jarvis" >
+
+    </div>
+    
+    <style>
+        body {
+          background: rgb(3,0,56);
+          background: linear-gradient(90deg, rgba(3,0,56,1) 0%, rgba(0,20,128,1) 50%, rgba(3,0,56,1) 100%);
+          color: #fff;
+          
+        }
+        p {text-align: center; font-size:25px; }
+        h1 {text-align: center; font-size:60px }
+        .text-center {
+  text-align: center;
+}
+
+.fullpage-wrapper {
+  width: 100%;
+  height: 59vh;
+  display: flex;
+}
+.reactor-container {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border: 1px dashed #888;
+  position: relative;
+  border-radius: 50%;
+  background-color: #384c50;
+  border: 1px solid rgb(18, 20, 20);
+  box-shadow: 0px 0px 32px 8px rgb(18, 20, 20), 0px 0px 4px 1px rgb(18, 20, 20) inset;
+}
+
+
+.circle {
+  border-radius: 50%;
+}
+.abs-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.core-inner {
+  width: 70px;
+  height: 70px;
+  border: 5px solid #1B4E5F;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 7px 5px #52FEFE, 0px 0px 10px 10px #52FEFE inset;
+}
+.core-outer {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #52FEFE;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 2px 1px #52FEFE, 0px 0px 10px 5px #52FEFE inset;
+}
+.core-wrapper {
+  width: 180px;
+  height: 180px;
+  background-color: #073c4b;
+  box-shadow: 0px 0px 5px 4px #52FEFE, 0px 0px 6px 2px #52FEFE inset;
+}
+.tunnel {
+  width: 220px;
+  height: 220px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px 1px #52FEFE, 0px 0px 5px 4px #52FEFE inset;
+}
+.coil-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: 3s infinite linear reactor-anim;
+}
+.coil {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  top: calc(50% - 110px);
+  left: calc(50% - 15px);
+  transform-origin: 15px 110px;
+  background-color:#073c4b;
+  box-shadow: 0px 0px 5px #52FEFE inset;
+}
+.coil-1 {
+  transform: rotate(0deg);
+}
+.coil-2 {
+  transform: rotate(45deg);
+}
+.coil-3 {
+  transform: rotate(90deg);
+}
+.coil-4 {
+  transform: rotate(135deg);
+}
+.coil-5 {
+  transform: rotate(180deg);
+}
+.coil-6 {
+  transform: rotate(225deg);
+}
+.coil-7 {
+  transform: rotate(270deg);
+}
+.coil-8 {
+  transform: rotate(315deg);
+}
+@keyframes reactor-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.eachBox1 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+img.displayPic
+{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 59px;
+}
+
+.wrapper {
+    text-align: top;
+    color: #fff;
+    position: absolute;
+    top: 5%; 
+    left: 1%; 
+    max-width: 400px;
+    width: 100%;
+    background: rgba(0, 30, 78, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 3px;
+    transform: translate(-50%, -50%);
+    transform: scale(0.6);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.06);
+  }
+  .wrapper header {
+    font-family: "Russo One", sans-serif;
+    font-size: 90px;
+    padding: 17px 30px;
+    background: rgb(0, 40, 104, 0.2);
+    /* border-bottom: 2px solid rgb(255, 255, 255); */
+    border-style: solid;
+    border-width: 0px 0px 2px;
+    border-image: url(Source/border_bottom_done.png) 0 0 2 stretch;
+  }
+  .wrapper header p {
+    color: #f7451d;
+    margin: 0;
+    padding: 0;
+    animation: animate 1.5s linear infinite;
+  }
+  @keyframes animate {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .wrapper header.active {
+    cursor: move;
+    user-select: none;
+  }
+  .wrapper .content {
+    display: flex;
+    padding: 20px 30px 0px 30px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content .title {
+    margin: 15px 0;
+    font-size: 29px;
+    font-weight: 500;
+  }
+  .content p {
+    font-size: 19px;
+    text-align: left;
+  }
+  .glowbar {
+    padding-top: 0;
+    margin-top: 0;
+    height: 18px;
+    background: rgb(20, 8, 251);
+    background: linear-gradient(90deg, rgb(19, 7, 234) 0%, rgb(51, 82, 255) 50%, rgb(19, 6, 248) 100%);
+    color: #ffffff;
+    transition: box-shadow 0.5s ease-in-out;
+
+  }
+  .active-voice {
+    box-shadow: 0px -5px 50px rgb(196, 4, 255);
+  }
+      </style>
+<script>
+  if (console.error) {
+       // wait 2 seconds
+        setTimeout(function(){
+            var synthesis = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance();
+            utterance.text = "There seems to be an error in the console";
+            utterance.volume = 1;
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            synthesis.speak(utterance);
+            //wait 2 seconds
+            setTimeout(function(){
+                document.getElementById("consoleErrorInfo").style.display = "block"
+                var audio = new Audio('alert.wav');
+                audio.volume = 0.4;
+                audio.play();
+
+            }, 2000);
+        }, 3000);
+    }
+</script>
+  </head>
+  <div class="eachBox">
+    <h1>Jarvis</h1>
+
+    <p id="text1">Jarvis</p> 
+    
+
+    <div class="text-center">
+    <button onClick="startJarvis()">Start Jarvis</button>
+    <div class="wrapper">
+      <header><p>ALERT</p></header>
+      <div class="content">
+        <p>TRANING IN PROGRESS.</p>
+      
+      <section id="consoleErrorInfo">
+        <div id="consoleError">
+          <h1>! CONSOLE ERROR !</h1>
+        </div>
+      </section>
+      </div>
+    </div>
+        
+      </div>
+    </div>
+    <div class="fullpage-wrapper">
+      <div class="reactor-container">
+        <div class="reactor-container-inner circle abs-center"></div>
+        <div class="tunnel circle abs-center"></div>
+        <div class="core-wrapper circle abs-center"></div>
+        <div class="core-outer circle abs-center"></div>
+        <div class="core-inner circle abs-center"></div>
+        <div class="coil-container">
+          <div class="coil coil-1"></div>
+          <div class="coil coil-2"></div>
+          <div class="coil coil-3"></div>
+          <div class="coil coil-4"></div>
+          <div class="coil coil-5"></div>
+          <div class="coil coil-6"></div>
+          <div class="coil coil-7"></div>
+          <div class="coil coil-8"></div>
+          
+  </div>
+
+  <script>
+    const voiceActive = document.getElementById("jarvis");
+    function startJarvis() {
+        fetch('/startListening')
+        .then(response => response.text())
+        .then(data => {
+          if(data == "stop") {
+            console.log("stopping")
+            voiceActive.classList.toggle("active-voice");
+          }
+          if(data == "refreshw") {
+            driver.navigate().refresh();
+          }
+            console.log(data);
+            startJarvis();
+        });
+    }
+
+  </script>
+        <script src="dist/spotifyCurrentlyPlaying.js"></script>
+        <script>
+            ;(function(global) {
+                /**
+                 *  Social sharing popup window
+                 */
+                var jsSocialShares = document.querySelectorAll('.social-share a');
+                if(jsSocialShares) {
+                    [].forEach.call(jsSocialShares, function(anchor) {
+                        anchor.addEventListener('click', function(e) {
+
+                            var url = this.href,
+                                width = 500,
+                                height = 300,
+                                left = (screen.width / 2) - (width / 2),
+                                top = (screen.height / 2) - (height / 2);
+
+                            if(/^(f|ht)tps?:\/\//i.test(url) || /^mailto/i.test(url)) {
+                                e.preventDefault();
+                                window.open(
+                                    url,
+                                    '',
+                                    'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left
+                                );
+                            }
+
+                        });
+                    });
+                }
+            })(window);
+        </script>
+
+
+    
+
+  </body>
+</html>
